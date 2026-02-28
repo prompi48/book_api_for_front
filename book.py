@@ -45,6 +45,7 @@ def get_all_books():
 
 # Read (GET) operation - Get a specific book by ID
 @app.route('/books/<int:book_id>', methods=['GET'])
+@cross_origin()
 def get_book(book_id):
     book = next((b for b in books if b["id"] == book_id), None)
     if book:
